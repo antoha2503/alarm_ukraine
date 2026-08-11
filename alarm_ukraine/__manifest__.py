@@ -2,7 +2,7 @@
     "name": "Alerm in Ukraine",
     "version": "1.0.0",
     "category": "Tools",
-    "summary": "Моніторинг повітряних тривог України безпосередньо в Odoo",
+    "summary": "Automated Ukraine Air Alert (Повітряна Тривога) tracking in Systray with sound notifications and employee region-based auto-popups. Моніторинг повітряних тривог України безпосередньо в Odoo",
     "description": """Alerm in Ukraine — модуль для моніторингу повітряних тривог України
         безпосередньо в інтерфейсі Odoo.
         
