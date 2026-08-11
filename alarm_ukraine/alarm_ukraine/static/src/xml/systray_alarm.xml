@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- 1. Шаблон самой кнопки в панели Systray -->
+    <t t-name="alarm_ukraine.SystrayAlarm">
+        <!-- Вешаем событие t-on-click на вызов поповера из JS -->
+        <div class="o_systray_item role_button" id="systray_alarm_icon" t-on-click="onIconClick" style="cursor: pointer; padding: 0 10px; display: flex; align-items: center;">
+            <!-- Колокольчик -->
+            <i t-attf-class="fa fa-bullhorn #{state.alert ? 'text-danger fw-bold' : 'text-success'}" style="font-size: 1.2rem;"/>
+        </div>
+    </t>
+
+    <!-- 2. Новый изолированный шаблон для контента Popover -->
+    <t t-name="alarm_ukraine.AlarmPopoverContent">
+        <!-- Стилизация всплывающего окна (внутренние отступы и тени) -->
+        <div class="p-3 bg-view border rounded shadow" style="width: 300px;">
+
+            <h5 class="mb-1">
+                Регіон:
+                <strong t-esc="props.state.city"/>
+            </h5>
+            <hr class="my-2"/>
+            <p class="mb-1">
+
+                <t t-if="props.state.alert == true">
+                    <img src="/alarm_ukraine/static/description/alert_animation.gif"
+                             alt="ALARM"
+                             style="width: 224px; height:224px; object-fit: contain;"  class="me-1 d-block mx-auto"/>
+                    <strong>Статус:</strong><span class="text-danger fw-bold">🔴 Повітряна тривога</span>
+                </t>
+                <t t-elif="props.state.alert == false">
+                    <span class="text-success fw-bold">🟢 Тривоги немає</span>
+                </t>
+            </p>
+            <hr class="my-2"/>
+            <p class="mb-0 text-muted" style="font-size: 0.85rem;">
+                <strong>Оновлено:</strong>
+                <t t-esc="props.state.updated"/>
+            </p>
+        </div>
+    </t>
+
+</templates>
