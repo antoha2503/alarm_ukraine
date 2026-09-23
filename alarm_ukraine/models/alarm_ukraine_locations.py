@@ -88,7 +88,7 @@ class UkraineLocations(models.Model):
                 alert_levels_list = result[0].get('activeAlerts', [])[0].get('activeAlertLevels', [])
 
                 if alert_levels_list and isinstance(alert_levels_list, list):
-                    alert_levels = alert_levels_list[0].get('reason', 'Не визначено')
+                    alert_levels = alert_levels_list[-1].get('reason', 'Не визначено')
                 else:
                     alert_levels = 'Не визначено'
             else:
