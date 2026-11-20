@@ -27,11 +27,11 @@
                              alt="ALARM"
                              style="width: 224px; height:224px; object-fit: contain;"  class="me-1 d-block mx-auto"/>
                     <strong>Статус:</strong><span class="text-danger fw-bold">🔴 Повітряна тривога</span>
-                    <t t-if="props.state?.levels and props.state.levels.toLowerCase().includes('жовт')">
-                        <span class="text-warning text-muted small">(<t t-out="props.state.levels"/>)</span>
+                    <t t-if="props.state?.levels == 'Yellow'">
+                        <span class="text-warning text-muted small"> (Жовтий рівень)</span>
                     </t>
-                    <t t-elif="props.state?.levels and props.state.levels.toLowerCase().includes('червон')">
-                        <span class="text-danger text-muted small">(<t t-out="props.state.levels"/>)</span>)
+                    <t t-elif="props.state?.levels == 'Red'">
+                        <span class="text-danger text-muted small"> (Червоний рівень)</span>
                     </t>
                 </t>
                 <t t-elif="props.state.alert == false">
