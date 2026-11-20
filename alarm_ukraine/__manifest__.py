@@ -1,6 +1,6 @@
 {
     "name": "Alerm in Ukraine",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "category": "Tools",
     "summary": "Моніторинг повітряних тривог України безпосередньо в Odoo",
     "description": """Alerm in Ukraine — модуль для моніторингу повітряних тривог України
